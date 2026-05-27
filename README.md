@@ -341,3 +341,6 @@ See `LICENSE` for complete usage terms.
 ## Author
 
 Anatoly S. Krivitsky, Ph.D.
+
+## Contact
+akrivitsky.dev@proton.me
