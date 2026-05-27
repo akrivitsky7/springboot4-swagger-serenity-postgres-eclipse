@@ -1,0 +1,48 @@
+# Copyright (c) 2026 Anatoly S. Krivitsky, Ph.D.
+# All rights reserved.
+#
+# Permission is granted, free of charge, to use, copy, distribute, and publish
+# this YAML configuration file, provided that this copyright notice is preserved.
+#
+# This file is provided "as is", without warranty of any kind. The user assumes
+# all responsibility and risk for its use.
+
+spring:
+  application:
+    name: swagger-postgres-demo
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/swagger_demo
+    username: akrivitsky
+    password: akrivitsky
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  sql:
+    init:
+      mode: always
+      encoding: UTF-8
+
+  # Spring Boot 4.0.6: virtual threads are first-class
+  threads:
+    virtual:
+      enabled: true
+
+server:
+  port: 8080
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    operationsSorter: alpha
+    tagsSorter: alpha
+  api-docs:
+    path: /v3/api-docs

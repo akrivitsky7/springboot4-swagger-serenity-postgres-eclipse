@@ -1,0 +1,115 @@
+/*
+ * Copyright (c) 2026 Anatoly S. Krivitsky, Ph.D.
+ * All rights reserved.
+ *
+ * Conditional Permission for Free Use
+ *
+ * Permission is hereby granted, free of charge, to any person or organization
+ * to use, copy, distribute, and publish this Gradle build script, provided that
+ * this copyright notice and permission notice are included in all copies or
+ * substantial portions of the script.
+ *
+ * Questions and comments may be directed to the author at:
+ *   akrivitsky@yahoo.com
+ *   akrivitsky@gmail.com
+ *
+ * Disclaimer of Warranty and Liability
+ *
+ * This script is provided "as is", without warranty of any kind, express or
+ * implied, including but not limited to warranties of merchantability, fitness
+ * for a particular purpose, and non-infringement.
+ *
+ * The user assumes all responsibility and risk for the use of this script.
+ * Under no circumstances, including negligence, shall the author be liable for
+ * any direct, indirect, incidental, special, consequential, exemplary, or punitive
+ * damages, or for any lost profits, data loss, business interruption, or other
+ * losses arising from the use of, inability to use, or reliance on this script.
+ */
+plugins {
+    id 'java'
+    id 'eclipse'
+    id 'org.springframework.boot' version '4.0.6'
+    id 'io.spring.dependency-management' version '1.1.7'
+    id 'net.serenity-bdd.serenity-gradle-plugin' version '5.3.9'
+}
+
+group = 'dev.anatoly'
+version = '0.0.1-SNAPSHOT'
+description = 'Spring Boot + Swagger/OpenAPI + PostgreSQL + Serenity demo'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(25)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    serenityVersion = '5.3.9'
+    cucumberVersion = '7.21.1'
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:3.0.1'
+
+    runtimeOnly 'org.postgresql:postgresql'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.boot:spring-boot-starter-webmvc-test'
+
+    testImplementation "net.serenity-bdd:serenity-junit5:${serenityVersion}"
+    testImplementation "net.serenity-bdd:serenity-rest-assured:${serenityVersion}"
+    testImplementation "net.serenity-bdd:serenity-cucumber:${serenityVersion}"
+
+    testImplementation "io.cucumber:cucumber-java:${cucumberVersion}"
+    testImplementation "io.cucumber:cucumber-junit-platform-engine:${cucumberVersion}"
+
+    testImplementation 'org.junit.platform:junit-platform-suite-api'
+    testRuntimeOnly 'org.junit.platform:junit-platform-suite-engine'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+
+serenity {
+    // make aggregate read the same folder Eclipse writes to
+    outputDirectory = file("$projectDir/target/site/serenity")
+    reports = ["single-page-html"]
+}
+
+test {
+    useJUnitPlatform {
+        excludeEngines 'cucumber'
+    }
+    systemProperties System.getProperties()
+    systemProperty 'serenity.outputDirectory', "$projectDir/target/site/serenity"
+    systemProperty 'serenity.project.name', 'Swagger Postgres Demo'
+    // --- THIS is the key you missed ---
+    systemProperty 'cucumber.features', 'classpath:__no_features__'
+    systemProperty 'cucumber.glue', 'nope'
+}
+
+task cucumberTest(type: Test) {
+    useJUnitPlatform {
+        includeEngines 'junit-platform-suite', 'cucumber'
+    }
+    testClassesDirs = sourceSets.test.output.classesDirs
+    classpath = sourceSets.test.runtimeClasspath
+
+    systemProperties System.getProperties()
+    systemProperty 'serenity.outputDirectory', "$projectDir/target/site/serenity"
+    systemProperty 'serenity.project.name', 'Swagger Postgres Demo'
+    // --- FORCE Cucumber to the real features for this task only ---
+    systemProperty 'cucumber.features', 'classpath:features/books'
+    systemProperty 'cucumber.glue', 'dev.anatoly.swaggerdemo.cucumber'
+
+    filter {
+        includeTestsMatching "*RunCucumberTest*"
+    }
+}
