@@ -12,8 +12,7 @@
  * arising from the use of, inability to use, or reliance on this code.
  *
  * Questions and comments:
- *   akrivitsky@yahoo.com
- *   akrivitsky@gmail.com
+ *   akrivitsky.dev@proton.me
  */
 package dev.anatoly.swaggerdemo;
 
