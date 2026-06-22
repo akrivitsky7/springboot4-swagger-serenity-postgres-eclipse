@@ -1,11 +1,11 @@
 # springboot4-swagger-serenity-postgres-eclipse
-A repo for my article, **"Quick tutorial: how to use the latest Docker 29.5.2, Eclipse 2026-03, Spring Boot 4.0.6, PostgreSQL, Gradle 9.5.1, Swagger/OpenAPI, Serenity, Cucumber, and JUnit 6 in one working project using a vibe-coding approach."**
+A repo for my article, **"Quick tutorial: how to use the latest Docker 29.5.2, Eclipse 2026-06, Spring Boot 4.1.0, PostgreSQL, Gradle 9.6.0, Swagger/OpenAPI, Serenity, Cucumber, and JUnit 6 in one working project using a vibe-coding approach."**
 
 The article can be found [here](https://medium.com/@anatolykrivitsky/quick-tutorial-how-to-use-the-latest-docker-29-5-2-0670b716b6cc).
 
 # Spring Boot 4 + PostgreSQL + Swagger/OpenAPI + Serenity + Cucumber + JUnit 6 Demo
 
-This repository contains a working example of a modern **Spring Boot 4.0.6 / Java 25** application using **PostgreSQL in Docker**, **Gradle 9.5.1**, **Eclipse 2026-03**, **Swagger/OpenAPI through springdoc**, and automated testing with **JUnit 6**, **Cucumber**, and **Serenity BDD**.
+This repository contains a working example of a modern **Spring Boot 4.1.0 / Java 25** application using **PostgreSQL in Docker**, **Gradle 9.6.0**, **Eclipse 2026-06**, **Swagger/OpenAPI through springdoc**, and automated testing with **JUnit 6**, **Cucumber**, and **Serenity BDD**.
 
 The goal is not to teach every technology from scratch. Instead, this project provides a small but realistic baseline where all of these tools work together in one coherent setup. It can be used as a reference project for experimenting with Spring Boot 4, Java 25, PostgreSQL, modern Gradle builds, API documentation, and graphical test reporting.
 
@@ -14,11 +14,11 @@ The goal is not to teach every technology from scratch. Instead, this project pr
 | Area | Technology |
 |---|---|
 | Language | Java 25 |
-| Framework | Spring Boot 4.0.6 |
-| Build tool | Gradle 9.5.1 |
-| IDE used in the article | Eclipse 2026-03 |
+| Framework | Spring Boot 4.1.0 |
+| Build tool | Gradle 9.6.0 |
+| IDE used in the article | Eclipse 2026-06 |
 | Database | PostgreSQL 18.4 in Docker |
-| Docker version used in the article | Docker Desktop 4.75 / Docker 29.5.2 |
+| Docker version used in the article | Docker Desktop 4.78 / Docker 29.5.3, |
 | API documentation | springdoc OpenAPI / Swagger UI |
 | Unit and slice testing | JUnit 6 / JUnit Jupiter, Mockito, Spring Boot Test |
 | BDD/API reporting | Serenity BDD 5.3.9 |
