@@ -10,8 +10,8 @@
  * substantial portions of the script.
  *
  * Questions and comments may be directed to the author at:
- *   akrivitsky.dev@proton.me
- *   
+ * akrivitsky@yahoo.com
+ * akrivitsky@gmail.com
  *
  * Disclaimer of Warranty and Liability
  *
@@ -28,7 +28,7 @@
 plugins {
     id 'java'
     id 'eclipse'
-    id 'org.springframework.boot' version '4.0.6'
+    id 'org.springframework.boot' version '4.1.0'
     id 'io.spring.dependency-management' version '1.1.7'
     id 'net.serenity-bdd.serenity-gradle-plugin' version '5.3.9'
 }
@@ -61,21 +61,26 @@ dependencies {
 
     runtimeOnly 'org.postgresql:postgresql'
 
+    // Core testing support
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    
+    // Official Spring Boot 4.x starter module for dedicated Web MVC slice testing
     testImplementation 'org.springframework.boot:spring-boot-starter-webmvc-test'
 
+    // Serenity BDD framework integration dependencies
     testImplementation "net.serenity-bdd:serenity-junit5:${serenityVersion}"
     testImplementation "net.serenity-bdd:serenity-rest-assured:${serenityVersion}"
     testImplementation "net.serenity-bdd:serenity-cucumber:${serenityVersion}"
 
+    // Cucumber testing suite engines
     testImplementation "io.cucumber:cucumber-java:${cucumberVersion}"
     testImplementation "io.cucumber:cucumber-junit-platform-engine:${cucumberVersion}"
 
+    // JUnit execution lifecycle dependencies
     testImplementation 'org.junit.platform:junit-platform-suite-api'
     testRuntimeOnly 'org.junit.platform:junit-platform-suite-engine'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
-
 
 serenity {
     // make aggregate read the same folder Eclipse writes to
@@ -90,7 +95,6 @@ test {
     systemProperties System.getProperties()
     systemProperty 'serenity.outputDirectory', "$projectDir/target/site/serenity"
     systemProperty 'serenity.project.name', 'Swagger Postgres Demo'
-    // --- THIS is the key you missed ---
     systemProperty 'cucumber.features', 'classpath:__no_features__'
     systemProperty 'cucumber.glue', 'nope'
 }
