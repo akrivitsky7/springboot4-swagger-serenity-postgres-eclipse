@@ -24,7 +24,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 /**
- * Spring Boot 4.0.5 idiomatic DTO.
+ * Spring Boot 4.1.0 idiomatic DTO.
  * Using a Java record removes boilerplate getters/setters.
  * Jakarta Validation works directly on record components.
  * Springdoc OpenAPI reads @Schema on components for docs.
