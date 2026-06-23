@@ -1,5 +1,6 @@
 # springboot4-swagger-serenity-postgres-eclipse
-A repo for my article, **"Quick tutorial: how to use the latest Docker 29.5.2, Eclipse 2026-06, Spring Boot 4.1.0, PostgreSQL, Gradle 9.6.0, Swagger/OpenAPI, Serenity, Cucumber, and JUnit 6 in one working project using a vibe-coding approach."**
+A repo for my article, **Building with the Latest Java Development Stack: Spring Boot 4.1.0, Java 25, Docker 29.5.3, PostgreSQL, Gradle 9.6.0, Eclipse 2026–06, Swagger/OpenAPI, Serenity, Cucumber, and JUnit 6
+A practical hands-on tutorial showing how to combine the latest Java, Spring Boot, Docker, PostgreSQL, Gradle, Swagger/OpenAPI, Serenity, Cucumber, and JUnit 6 in one working project using a vibe-coding approach.**
 
 The article can be found [here](https://medium.com/@anatolykrivitsky/quick-tutorial-how-to-use-the-latest-docker-29-5-2-0670b716b6cc).
 
