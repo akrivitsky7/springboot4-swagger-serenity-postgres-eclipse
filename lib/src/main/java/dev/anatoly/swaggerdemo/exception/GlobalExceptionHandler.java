@@ -31,7 +31,7 @@ import java.time.OffsetDateTime;
 import java.util.List;
 
 /**
- * Spring Boot 4.0.5 exception handling.
+ * Spring Boot 4.1.0 exception handling.
  * Uses RFC 9457 ProblemDetail instead of custom ApiError.
  * Boot 4 automatically renders ProblemDetail as application/problem+json
  * and springdoc includes it in OpenAPI.
