@@ -13,8 +13,8 @@ spring:
 
   datasource:
     url: jdbc:postgresql://localhost:5432/swagger_demo
-    username: akrivitsky
-    password: akrivitsky
+    username: ${POSTGRES_LOGIN_ID:your_login_id}
+    password: ${POSTGRES_PASSWORD:your_password}
     driver-class-name: org.postgresql.Driver
 
   jpa:
@@ -31,7 +31,7 @@ spring:
       mode: always
       encoding: UTF-8
 
-  # Spring Boot 4.0.6: virtual threads are first-class
+  # Spring Boot 4.1.0: virtual threads are first-class
   threads:
     virtual:
       enabled: true
