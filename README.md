@@ -19,7 +19,7 @@ The goal is not to teach every technology from scratch. Instead, this project pr
 | Build tool | Gradle 9.6.0 |
 | IDE used in the article | Eclipse 2026-06 |
 | Database | PostgreSQL 18.4 in Docker |
-| Docker version used in the article | Docker Desktop 4.78 / Docker 29.5.3, |
+| Docker version used in the article | Docker Desktop 4.79 / Docker 29.5.3, |
 | API documentation | springdoc OpenAPI / Swagger UI |
 | Unit and slice testing | JUnit 6 / JUnit Jupiter, Mockito, Spring Boot Test |
 | BDD/API reporting | Serenity BDD 5.3.9 |
