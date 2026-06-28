@@ -201,7 +201,7 @@ Configures the root Gradle project and includes the `lib` subproject. It also ap
 Configures:
 
 - Java 25 toolchain support.
-- Spring Boot 4.0.6.
+- Spring Boot 4.1.0.
 - PostgreSQL JDBC driver.
 - springdoc OpenAPI / Swagger UI.
 - JUnit 6 / JUnit Jupiter testing.
@@ -322,7 +322,7 @@ Files involved:
 - `search_books.feature`
 - `WhenManagingBooks`
 
-Serenity can be integrated into a CI/CD pipeline, for example a Jenkins-based pipeline, so that test results for each build can be documented.
+Serenity can be integrated into a CI/CD pipeline, for example, a Jenkins-based pipeline, so that test results for each build can be documented.
 
 ## Notes on Swagger UI
 
