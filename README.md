@@ -71,7 +71,7 @@ Install or have available:
 - Docker Engine 29.5.2 or later.
 - JDK 25.
 - Gradle 9.5.1, or use the included Gradle wrapper.
-- Eclipse 2026-03, preferably **Eclipse IDE for Enterprise Java and Web Developers**.
+- Eclipse 2026-06, preferably **Eclipse IDE for Enterprise Java and Web Developers**.
 - Optional: DBeaver for GUI database inspection.
 - Optional on Windows: Cmder.
 
